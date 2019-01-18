@@ -27,7 +27,7 @@ func main() {
 			log.Fatal(err)
 		}
 		if new(big.Int).Mod(block.Hash().Big(), big.NewInt(1000)).Cmp(big.NewInt(6)) == 0 {
-			fmt.Printf("BINGO..... %v %v %v", block.NumberU64(), block.Hash().Hex(), block.Hash().Big())
+			fmt.Printf("BINGO..... %v,%v %v %v", block.Time(), block.NumberU64(), block.Hash().Hex(), block.Hash().Big())
 			fmt.Println()
 			fmt.Printf("%v blocks ago", latest.NumberU64()-block.NumberU64())
 			os.Exit(0)
